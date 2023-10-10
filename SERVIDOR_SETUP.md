@@ -47,6 +47,8 @@ Verifique se está conectado com
 ```ip a```
 Lembre-se que o Raspberry pi 3 tem suporte apenas a redes 2GHz
 
+O script `wifi-setup/setup-wifi.sh` deste repositório pode ser utilizado para automatizar este processo após ter conexão com o servidor.
+
 ## Configurar SSH
 Instale o openssh server
 ```sudo apt install openssh-server```
