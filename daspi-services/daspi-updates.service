@@ -1,0 +1,14 @@
+[Unit]
+Description=DasPi initial server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/check_updates.py
+
+RestartSec=5
+Restart=always
+
+StandardError=file:/home/ubuntu/logs/daspi-updates-stderr.log
+
+[Install]
+WantedBy=multi-user.target
