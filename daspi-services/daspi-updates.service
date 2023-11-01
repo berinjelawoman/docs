@@ -3,7 +3,7 @@ Description=DasPi initial server
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/check_updates.py
+ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/install_apps_adb.py
 
 RestartSec=5
 Restart=always

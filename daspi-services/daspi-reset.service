@@ -1,0 +1,14 @@
+[Unit]
+Description=DasPi stb reset
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/reset.py
+
+RestartSec=5
+Restart=always
+
+StandardError=file:/home/ubuntu/logs/daspi-reset-stderr.log
+
+[Install]
+WantedBy=multi-user.target

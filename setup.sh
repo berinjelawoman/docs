@@ -19,7 +19,6 @@ echo sending files
 
 sed "s/<PORT>/$SERVER_PORT/g" ssh-tunnel.config > $CONFIG_FILE
 sed -i "s/<DASPIPORT>/$DASPI_PORT/g" $CONFIG_FILE
-scp -r $CONFIG_FILE "ssh-tunnel@.service" "daspi-setup.sh" "daspi-services" "id_rsa" ubuntu@$IP:/home/ubuntu/
 
 echo sending DasPi
 cd $HOME/git/DarPi
@@ -28,4 +27,5 @@ git ls-tree -r main --name-only | tar -T - -cf - | ssh ubuntu@$IP "mkdir -p DarP
 cd -
 ssh -t ubuntu@$IP "chmod +x ./daspi-setup.sh && sudo ./daspi-setup.sh"
 
+scp -r $HOME/.android/{adbkey,adbkey.pub,adb.5037} $CONFIG_FILE "ssh-tunnel@.service" "daspi-setup.sh" "daspi-services" "id_rsa" ubuntu@$IP:/home/ubuntu/
 echo Installation finished. Tunnel port is $SERVER_PORT. Finish setup with ssh -p $SERVER_PORT ubuntu@localhost and accept the fingerprint

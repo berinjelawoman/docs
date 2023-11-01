@@ -3,7 +3,7 @@ Description=DasPi initial server
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/send_config.py
+ExecStart=/usr/bin/python3 /home/ubuntu/DarPi/backend/send_config.py --https
 
 RestartSec=5
 Restart=always

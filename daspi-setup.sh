@@ -4,7 +4,7 @@ echo updating packages
 apt update --fix-missing
 
 echo "Starting DasPi setup"
-apt install python3-pip
+apt install python3-pip adb
 /home/ubuntu/DarPi/setup.sh
 pip3 install flask-session
 
@@ -12,6 +12,8 @@ pip3 install flask-session
 echo "Setting up services"
 
 mkdir -p /home/ubuntu/logs
+mkdir -p /home/ubuntu/.android
+mv adb* /home/ubuntu/.android/
 
 mv ssh-tunnel@.service /etc/systemd/system/
 mv ssh-tunnel@blincast /etc/default/
